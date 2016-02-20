@@ -62,10 +62,8 @@ typedef unsigned int   NSUInteger;
 
 + (NSString *)stringWithData:(NSData *)aData encodingCandidates:(NSArray *)encodings
 {
-	NSEnumerator *enumerator = [encodings objectEnumerator];
-	NSNumber *encoding_packed;
 	NSString *a_string = nil;
-	while(encoding_packed = [enumerator nextObject]) {
+	for (NSNumber *encoding_packed in encodings) {
 		a_string = [[NSString alloc] initWithData:aData
 									encoding:[encoding_packed unsignedIntValue]];
 		if (a_string) break;
