@@ -2,8 +2,8 @@
 
 @interface NSMutableString (StringExtra)
 
-- (unsigned int)replacePrefixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts;
-- (unsigned int)replaceSuffixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts;
+- (NSUInteger)replacePrefixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts;
+- (NSUInteger)replaceSuffixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts;
 
 @end
 

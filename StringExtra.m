@@ -7,13 +7,13 @@ typedef unsigned int   NSUInteger;
 
 @implementation NSMutableString (StringExtra)
 
-- (unsigned int)replaceSubtextOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts
+- (NSUInteger)replaceSubtextOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts
 {
 	NSRange range = NSMakeRange(0, [self length]);
 	return [self replaceOccurrencesOfString:target withString:replacement options:opts range:range];
 }
 
-- (unsigned int)replacePrefixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts
+- (NSUInteger)replacePrefixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts
 {
 	NSRange range = NSMakeRange(0, [target length]);
 	if (range.length) {
@@ -28,7 +28,7 @@ typedef unsigned int   NSUInteger;
 	return 1;
 }
 
-- (unsigned int)replaceSuffixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts
+- (NSUInteger)replaceSuffixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts
 {
 	NSRange range= NSMakeRange([self length] - [target length], [target length]);
 	if (range.length) {
