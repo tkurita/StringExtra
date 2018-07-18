@@ -95,9 +95,15 @@ typedef unsigned int   NSUInteger;
 - (BOOL)hasSuffix:(NSString *)text options:(unsigned int)opts
 {
 	opts = opts|NSAnchoredSearch|NSBackwardsSearch;
-	NSRange range = NSMakeRange([self length] - [text length], [text length]);
-	range = [self rangeOfString:text options:opts range:range];
-	return (range.location != NSNotFound);
+    NSUInteger l1 = [self length];
+    NSUInteger l2 = [text length];
+    if (l1 >= l2) {
+        NSRange range = NSMakeRange([self length] - [text length], [text length]);
+        range = [self rangeOfString:text options:opts range:range];
+        return (range.location != NSNotFound);
+    } else {
+        return NO;
+    }
 }
 
 - (NSMutableArray *)splitWithCharacterSet:(NSCharacterSet *)delimiters
