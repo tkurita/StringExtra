@@ -4,7 +4,7 @@
 
 - (NSUInteger)replacePrefixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts;
 - (NSUInteger)replaceSuffixOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts;
-
+- (NSUInteger)replaceSubtextOfString:(NSString *)target withString:(NSString *)replacement options:(unsigned int)opts;
 @end
 
 @interface NSString (StringExtra) 
